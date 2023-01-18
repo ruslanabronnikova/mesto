@@ -1,0 +1,17 @@
+.element__title {
+  font-size: 24px;
+  color: rgba(0, 0, 0, 1);
+  font-weight: 900;
+  line-height: 29px;
+  margin: 0;
+  margin-top: 24px;
+  margin-left: 21px;
+  margin-bottom: 27px;
+  max-width: 200x;
+}
+
+@media screen and (max-width:950px) {
+  .element__title {
+    font-size: 20px;
+  }
+}

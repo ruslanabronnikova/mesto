@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./pages/index.css">
+  <title>Площадка Место</title>
+</head>
+
+<body class="page">
+  <header class="header">
+    <img src="./images/logo/logo.svg" class="header__logo" alt="Логотип Место">
+  </header>
+
+  <main class="main">
+    <section class="profile">
+      <img src="./images/profile/Avatar.png" class="profile__avatar" alt="Изображение">
+      <div class="profile__info">
+        <h1 class="profile__title">Жак-Ив Кусто</h1>
+        <p class="profile__subtitle">Исследователь океана</p>
+        <button class="profile__button profile__button_edit animation-button" type="button"></button>
+      </div>
+      <button class="profile__button profile__button_add animation-button" type="button"></button>
+    </section>
+
+    <section class="elements">
+      <div class="element">
+        <img src="./images/elements/karachaevsk.jpg" class="element__image" alt="">
+        <h2 class="element__title">Карачаевск</h2>
+        <button class="element__buttonlike animation-button" type="button"></button>
+      </div>
+
+      <div class="element">
+        <img src="./images/elements/goraelbrus.png" class="element__image" alt="">
+        <h2 class="element__title">Гора Эльбрус</h2>
+        <button class="element__buttonlike animation-button" type="button"></button>
+      </div>
+
+      <div class="element">
+        <img src="./images/elements/dombay.png" class="element__image" alt="">
+        <h2 class="element__title">Домбай</h2>
+        <button class="element__buttonlike animation-button" type="button"></button>
+      </div>
+
+      <div class="element">
+        <img src="./images/elements/goraelbrus2.png" class="element__image" alt="">
+        <h2 class="element__title">Гора Эльбрус</h2>
+        <button class="element__buttonlike animation-button" type="button"></button>
+      </div>
+
+      <div class="element">
+        <img src="./images/elements/dombay2.png" class="element__image" alt="">
+        <h2 class="element__title">Домбай</h2>
+        <button class="element__buttonlike animation-button" type="button"></button>
+      </div>
+
+      <div class="element">
+        <img src="./images/elements/karachaevsk2.png" class="element__image" alt="">
+        <h2 class="element__title">Карачаево-Ч...</h2>
+        <button class="element__buttonlike animation-button" type="button"></button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p class="footer__copyright">&copy; 2020 Mesto Russia</p>
+  </footer>
+
+  <div class="popup">
+    <div class="popup__container">
+      <div class="popup__body">
+        <h2 class="popup__title">Редактировать профиль</h2>
+        <input class="popup__input popup__name" type="text" name="name" placeholder="Имя">
+        <input class="popup__input popup__description" type="text" name="career" placeholder="Описание">
+        <button type="submit" class="popup__button-save animation-button">Сохранить</button>
+        <button type="close" class="popup__button popup__button-close animation-button"></button>
+      </div>
+    </div>
+  </div>
+  <script src="./script/scrtipt.js"></script>
+</body>
