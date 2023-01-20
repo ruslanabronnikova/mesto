@@ -8,17 +8,17 @@ const profileDescription = document.querySelector('.profile__subtitle');
 const inputName = document.querySelector('.popup__input_name');
 const inputDescription = document.querySelector('.popup__input_career');
 
-function openPopup(){
+function openPopup() {
   popup.classList.add('popup__opene');
   inputName.value = profileName.textContent;
   inputDescription.value = profileDescription.textContent;
 }
 
-function closePopup(){
+function closePopup() {
   popup.classList.remove('popup__opene');
 }
 
-function handleFormSubmit (evt) {
+function handleFormSubmit(evt) {
   evt.preventDefault();
   profileName.textContent = `${inputName.value}`;
   profileDescription.textContent = `${inputDescription.value}`;

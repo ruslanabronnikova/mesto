@@ -11,6 +11,6 @@
   transition: opacity 0.5s linear;
 }
 
-.element__buttonlike:hover{
+.element__buttonlike:hover {
   opacity: 0.5;
 }
