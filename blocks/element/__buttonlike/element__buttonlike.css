@@ -2,9 +2,15 @@
   grid-area: buttonlike;
   width: 22px;
   height: 19px;
-  background-color: white;
+  background-color: transparent;
   border: none;
   background-image: url(../../../images/elements/buttonlike.svg);
   justify-self: end;
   margin: 30px 20px 0 0;
+  cursor: pointer;
+  transition: opacity 0.5s linear;
+}
+
+.element__buttonlike:hover{
+  opacity: 0.5;
 }

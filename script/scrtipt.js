@@ -1,38 +1,30 @@
 const popup = document.querySelector('.popup');
-const popupcontainer = document.querySelector('.popup__container');
-const popupopen = document.querySelector('.profile__button_edit');
-const popupbody = document.querySelector('.popup__body');
-const inputname = document.querySelector('.popup__name');
-const inputdescription = document.querySelector('.popup__description');
-const popupsubmit = document.querySelector('.popup__button-save')
-const popupclose = document.querySelector('.popup__button-close');
-const nameprofile = document.querySelector('.profile__title');
-const descritpionprofile = document.querySelector('.profile__subtitle');
+const popupForm = document.querySelector('.popup__body');
+const popupOpen = document.querySelector('.profile__button_act_edit');
+const popupClose = document.getElementById('close')
+const popupSave = document.getElementById('save')
+const profileName = document.querySelector('.profile__title');
+const profileDescription = document.querySelector('.profile__subtitle');
+const inputName = document.querySelector('.popup__input_name');
+const inputDescription = document.querySelector('.popup__input_career');
 
+function openPopup(){
+  popup.classList.add('popup__opene');
+  inputName.value = profileName.textContent;
+  inputDescription.value = profileDescription.textContent;
+}
 
-popupopen.addEventListener('click', function () {
-  popup.classList.add('active');
-  inputname.value = nameprofile.textContent;
-  inputdescription.value = descritpionprofile.textContent;
-})
+function closePopup(){
+  popup.classList.remove('popup__opene');
+}
 
-popupclose.addEventListener('click', function () {
-  popup.classList.remove('active');
-})
-
-popupcontainer.addEventListener('submit', function addName(evt) {
+function handleFormSubmit (evt) {
   evt.preventDefault();
-  nameprofile.textContent = '${inputname.value}';
-  descritpionprofile.textContent = '${inputdescription.value}';
-  popupclose();
-})
+  profileName.textContent = `${inputName.value}`;
+  profileDescription.textContent = `${inputDescription.value}`;
+  closePopup();
+}
 
-
-
-
-
-
-
-
-
-
+popupOpen.addEventListener('click', openPopup);
+popupClose.addEventListener('click', closePopup);
+popupForm.addEventListener('submit', handleFormSubmit);
