@@ -24,58 +24,52 @@
       <button aria-label= "Добавить" class="profile__button profile__button_act_add animation-button" type="button"></button>
     </section>
 
-    <section class="elements">
-      <div class="element">
-        <img src="./images/elements/karachaevsk.jpg" class="element__image" alt="Изображение здания в горах">
-        <h2 class="element__title">Карачаевск</h2>
-        <button aria-label= "Нравится" class="element__buttonlike" type="button"></button>
-      </div>
-
-      <div class="element">
-        <img src="./images/elements/goraelbrus.png" class="element__image" alt="Изображение горы Эльбрус">
-        <h2 class="element__title">Гора Эльбрус</h2>
-        <button aria-label= "Нравится" class="element__buttonlike" type="button"></button>
-      </div>
-
-      <div class="element">
-        <img src="./images/elements/dombay.png" class="element__image" alt="Изображение гор и леса">
-        <h2 class="element__title">Домбай</h2>
-        <button aria-label= "Нравится" class="element__buttonlike" type="button"></button>
-      </div>
-
-      <div class="element">
-        <img src="./images/elements/goraelbrus2.png" class="element__image" alt="Изображение горы Эльбрус">
-        <h2 class="element__title">Гора Эльбрус</h2>
-        <button aria-label= "Нравится" class="element__buttonlike" type="button"></button>
-      </div>
-
-      <div class="element">
-        <img src="./images/elements/dombay2.png" class="element__image" alt="Изображение гор и леса">
-        <h2 class="element__title">Домбай</h2>
-        <button aria-label= "Нравится" class="element__buttonlike" type="button"></button>
-      </div>
-
-      <div class="element">
-        <img src="./images/elements/karachaevsk2.png" class="element__image" alt="Изображение здания в горах">
-        <h2 class="element__title">Карачаево-Черкесия</h2>
-        <button aria-label= "Нравится" class="element__buttonlike" type="button"></button>
-      </div>
-    </section>
+   <section class="elements">
+   </section>
   </main>
+
+  <template id="template-element">
+      <div class="element">
+        <img class="element__image" alt="#" src="#">
+          <h2 class="element__title"></h2>
+          <button aria-label= "Нравится" class="element__buttonlike" type="button"></button>
+          <button aria-label= "Нравится" class="element__buttondel" type="button"></button>
+      </div>
+  </template>
 
   <footer class="footer">
     <p class="footer__copyright">&copy; 2020 Mesto Russia</p>
   </footer>
 
-  <div class="popup">
+  <div class="popup popup_mesto_profile">
     <div class="popup__body">
-      <form class="popup__container" name="form-popup" method="post">
+      <form class="popup__container popup__container_mesto_profile" name="form-popupprofile" method="post">
         <h2 class="popup__title">Редактировать профиль</h2>
         <input value="" class="popup__input popup__input_name_value" name="name-input" placeholder="Имя">
         <input value="" class="popup__input popup__input_career_value" name="description-input" placeholder="Описание">
         <button type="button" id="close" class="popup__button popup__button_act_close animation-button"></button>
         <button type="submit" id="save" class="popup__button popup__button_act_save">Сохранить</button>
       </form>
+    </div>
+  </div>
+
+  <div class="popup popup_mesto_card">
+    <div class="popup__body">
+      <form class="popup__container popup__container_mesto_card" name="form-popupmesto" method="post">
+        <h2 class="popup__title">Новое Место</h2>
+        <input value="" class="popup__input popup__input_title_value" name="title-input" placeholder="Название">
+        <input value="" class="popup__input popup__input_link_value" name="link-input" placeholder="Ссылка на картинку">
+        <button type="button" id="closecard" class="popup__button popup__button_act_close animation-button"></button>
+        <button type="submit" id="create" class="popup__button popup__button_act_save">Создать</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="popup popup_mesto_image">
+    <div class="popup__imagebody">
+      <img class="popup__picture" alt="#" src="#">
+      <h2 class="popup__picture-title"></h2>
+      <button type="button" id="closeimage" class="popup__button popup__button_act_close animation-button"></button>
     </div>
   </div>
 
