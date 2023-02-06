@@ -1,4 +1,4 @@
-.popup__button_act_save {
+.popup__button-submit {
   margin: 0 auto;
   margin-top: 48px;
   text-align: center;
@@ -13,12 +13,12 @@
   transition: opacity 0.5s linear;
 }
 
-.popup__button_act_save:hover{
+.popup__button-submit:hover{
   opacity: 0.8;
 }
 
 @media screen and (max-width: 560px) {
-  .popup__button_act_save {
+  .popup__button-submit {
     width: 238px;
     font-size: 14px;
   }

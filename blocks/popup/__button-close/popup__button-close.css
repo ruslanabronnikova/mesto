@@ -1,4 +1,4 @@
-.popup__button_act_close {
+.popup__button-close {
   background-image: url(../../../../images/popup/CloseIcon.svg);
   width: 32px;
   height: 32px;
@@ -10,7 +10,7 @@
 }
 
 @media screen and (max-width: 560px) {
-  .popup__button_act_close {
+  .popup__button-close {
     top: -35px;
     right: 0;
     width: 20px;
