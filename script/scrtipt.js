@@ -27,11 +27,12 @@ function handleFormSubmit(evt) {
 
 popupOpen.addEventListener('click', function(){
   openPopup(popupProfile);
+  inputName.value = profileName.textContent;
+  inputDescription.value = profileDescription.textContent;
+
 });
 popupClose.addEventListener('click', function(){
   closePopup(popupProfile)
-  inputName.value = profileName.textContent;
-  inputDescription.value = profileDescription.textContent;
 });
 popupFormProfile.addEventListener('submit', handleFormSubmit);
 
