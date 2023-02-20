@@ -1,22 +1,43 @@
+const popup = document.querySelector('.popup')
+
 const popupProfile = document.querySelector('.popup_mesto_profile');
 const popupFormProfile = document.querySelector('.popup__container_mesto_profile');
-const popupOpen = document.querySelector('.profile__button_act_edit');
-const popupClose = document.querySelector('.popup__button_act_close')
-const popupSave = document.querySelector('.popup__button_act_save')
+const popupButtonOpen = document.querySelector('.profile__button_act_edit');
+const popupButtonClose = document.querySelector('.popup__button_act_close');
+const popupButtonSave = popupFormProfile.querySelector('.popup__button_act_save');
 const profileName = document.querySelector('.profile__title');
 const profileDescription = document.querySelector('.profile__subtitle');
 const inputName = document.querySelector('.popup__input_name_value');
 const inputDescription = document.querySelector('.popup__input_career_value');
 
-const closeButtons = document.querySelectorAll('.popup__button_act_close');
-
 function openPopup(popup) {
   popup.classList.add('popup_opene');
+  document.addEventListener('keydown', closePopupKeyESC)
+  console.log('openPopup')
 }
 
 function closePopup(popup) {
   popup.classList.remove('popup_opene');
+  document.removeEventListener('keydown', closePopupKeyESC)
 }
+
+function closePopupKeyESC (evt) {
+  console.log('evt', evt)
+  if(evt.keyCode===27) {
+    const openedPopup = document.querySelector('.popup_opene');
+    closePopup(openedPopup);
+  }
+}
+
+const popupCloseOverlay = document.querySelectorAll('.popup')
+
+popupCloseOverlay.forEach((popup) => {
+popup.addEventListener('click', (evt) => {
+  if (evt.target === popup) {
+    closePopup(popup)
+  }
+})
+});
 
 function handleFormSubmit(evt) {
   evt.preventDefault();
@@ -25,15 +46,23 @@ function handleFormSubmit(evt) {
   closePopup(popupProfile);
 }
 
-popupOpen.addEventListener('click', function(){
+popupButtonOpen.addEventListener('click', function(){
   openPopup(popupProfile);
+  openPopupProfile ()
+  popupButtonSave.removeAttribute('disabled')
+  popupButtonSave.classList.remove('popup__button-submit_disabled')
+});
+
+
+function openPopupProfile () {
   inputName.value = profileName.textContent;
   inputDescription.value = profileDescription.textContent;
+}
 
-});
-popupClose.addEventListener('click', function(){
+popupButtonClose.addEventListener('click', function(){
   closePopup(popupProfile)
 });
+
 popupFormProfile.addEventListener('submit', handleFormSubmit);
 
 const initialCards = [
@@ -75,14 +104,21 @@ const popupFormCard = document.querySelector('.popup__container_mesto_card');
 
 popupCloseCard.addEventListener('click', function(){
   closePopup(popupCard);
-  inputTitle.value = "";
-  inputLink.value = "";
+  popupFormCard.reset();
 })
 
 popupOpenCard.addEventListener('click', function(){
   openPopup(popupCard)
+  popupCreate.setAttribute('disabled', 'disabled')
+  popupCreate.classList.add('popup__button-submit_disabled')
 });
 
+
+function keyHundler (evt) {
+  if (evt.key === 'Enter') {
+    cardFormSumit(evt);
+  }
+}
 
 function cardFormSumit(evt) {
   evt.preventDefault();
@@ -93,8 +129,7 @@ function cardFormSumit(evt) {
 
   elements.prepend(card);
   closePopup(popupCard);
-  inputTitle.value = "";
-  inputLink.value = "";
+  popupFormCard.reset();
 }
 
 popupFormCard.addEventListener('submit', cardFormSumit);
