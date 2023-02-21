@@ -12,9 +12,6 @@
   line-height: 17px;
 }
 
-.popup__input:last-of-type {
-  margin-top: 29px;
-}
 
 @media (max-width: 535px) {
   .popup__input {
