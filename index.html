@@ -19,22 +19,24 @@
       <div class="profile__info">
         <h1 class="profile__title">Жак-Ив Кусто</h1>
         <p class="profile__subtitle">Исследователь океана</p>
-        <button aria-label= "Редактировать" id="Open" class="profile__button profile__button_act_edit animation-button" type="button"></button>
+        <button aria-label="Редактировать" id="Open" class="profile__button profile__button_act_edit animation-button"
+          type="button"></button>
       </div>
-      <button aria-label= "Добавить" class="profile__button profile__button_act_add animation-button" type="button"></button>
+      <button aria-label="Добавить" class="profile__button profile__button_act_add animation-button"
+        type="button"></button>
     </section>
 
-   <section class="elements">
-   </section>
+    <section class="elements">
+    </section>
   </main>
 
   <template id="template-element">
-      <div class="element">
-        <img class="element__image" alt="#" src="#">
-          <h2 class="element__title"></h2>
-          <button aria-label= "Нравится" class="element__buttonlike" type="button"></button>
-          <button aria-label= "Нравится" class="element__buttondel" type="button"></button>
-      </div>
+    <div class="element">
+      <img class="element__image" alt="#" src="#">
+      <h2 class="element__title"></h2>
+      <button aria-label="Нравится" class="element__buttonlike" type="button"></button>
+      <button aria-label="Нравится" class="element__buttondel" type="button"></button>
+    </div>
   </template>
 
   <footer class="footer">
@@ -43,16 +45,23 @@
 
   <div class="popup popup_mesto_profile">
     <div class="popup__body">
-      <form class="popup__container popup__container_mesto_profile" name="profile" id="profileform" method="post" novalidate>
+      <form class="popup__container popup__container_mesto_profile" name="profile" id="profileform" method="post"
+        novalidate>
         <h2 class="popup__title">Редактировать профиль</h2>
         <fieldset class="popup__items">
           <div class="popup__item">
-            <input type="text" value="" class="popup__input popup__input_name_value" name="name-input" id="name-input" placeholder="Имя" minlength="2" maxlength="40" title="Длина поля должна быть 2 и более символов и менее или равно 40" required >
+            <input type="text" value="" class="popup__input popup__input_name_value" name="name-input" id="name-input"
+              placeholder="Имя" minlength="2" maxlength="40"
+              title="Длина поля должна быть 2 и более символов и менее или равно 40" required>
             <span class="popup__item-error name-input-error"></span>
-            <input type="text" value="" class="popup__input popup__input_career_value" name="description-input" id="description-input" placeholder="Описание" minlength="2" maxlength="200" title="Длина поля должна быть 2 и более символов и менее или равно 200" required>
+            <input type="text" value="" class="popup__input popup__input_career_value" name="description-input"
+              id="description-input" placeholder="Описание" minlength="2" maxlength="200"
+              title="Длина поля должна быть 2 и более символов и менее или равно 200" required>
             <span class="popup__item-error description-input-error"></span>
-            <button type="button" id="close" class="popup__button popup__button-close popup__button_act_close animation-button"></button>
-            <button type="submit" id="save" class="popup__button popup__button-submit popup__button_act_save">Сохранить</button>
+            <button type="button" id="close"
+              class="popup__button popup__button-close popup__button_act_close animation-button"></button>
+            <button type="submit" id="save"
+              class="popup__button popup__button-submit popup__button_act_save">Сохранить</button>
           </div>
         </fieldset>
       </form>
@@ -65,12 +74,16 @@
         <h2 class="popup__title">Новое Место</h2>
         <fieldset class="popup__items">
           <div class="popup__item">
-            <input type="text" value="" class="popup__input popup__input_title_value" name="title-input" id="title-input" placeholder="Название" minlength="2" maxlength="30" required>
+            <input type="text" value="" class="popup__input popup__input_title_value" name="title-input"
+              id="title-input" placeholder="Название" minlength="2" maxlength="30" required>
             <span class="popup__item-error title-input-error"></span>
-            <input type="url" value="" class="popup__input popup__input_link_value" name="link-input" id="link-input" placeholder="Ссылка на картинку" required>
+            <input type="url" value="" class="popup__input popup__input_link_value" name="link-input" id="link-input"
+              placeholder="Ссылка на картинку" required>
             <span class="popup__item-error link-input-error"></span>
-            <button type="button" id="closecard" class="popup__button popup__button-close popup__button_card_close animation-button"></button>
-            <button type="submit" id="create" class="popup__button popup__button-submit popup__button_card_save">Создать</button>
+            <button type="button" id="closecard"
+              class="popup__button popup__button-close popup__button_card_close animation-button"></button>
+            <button type="submit" id="create"
+              class="popup__button popup__button-submit popup__button_card_save">Создать</button>
           </div>
         </fieldset>
       </form>
@@ -81,12 +94,11 @@
     <div class="popup__imagebody">
       <img class="popup__picture" alt="#" src="#">
       <h2 class="popup__picture-title"></h2>
-      <button type="button" id="closeimage" class="popup__button popup__button-close popup__button_img_close animation-button"></button>
+      <button type="button" id="closeimage"
+        class="popup__button popup__button-close popup__button_img_close animation-button"></button>
     </div>
   </div>
-
-  <script defer src="./script/validate.js"></script>
-  <script defer src="./script/index.js"></script>
+  <script type="module" defer src="./script/index.js"></script>
 </body>
 
 </html>
