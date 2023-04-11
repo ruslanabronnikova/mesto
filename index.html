@@ -50,14 +50,14 @@
         <h2 class="popup__title">Редактировать профиль</h2>
         <fieldset class="popup__items">
           <div class="popup__item">
-            <input type="text" value="" class="popup__input popup__input_name_value" name="name-input" id="name-input"
+            <input type="text" value="" class="popup__input popup__input_name_value" name="nameuser" id="nameuser"
               placeholder="Имя" minlength="2" maxlength="40"
               title="Длина поля должна быть 2 и более символов и менее или равно 40" required>
-            <span class="popup__item-error name-input-error"></span>
-            <input type="text" value="" class="popup__input popup__input_career_value" name="description-input"
-              id="description-input" placeholder="Описание" minlength="2" maxlength="200"
+            <span class="popup__item-error nameuser-error"></span>
+            <input type="text" value="" class="popup__input popup__input_career_value" name="aboutuser"
+              id="aboutuser" placeholder="Описание" minlength="2" maxlength="200"
               title="Длина поля должна быть 2 и более символов и менее или равно 200" required>
-            <span class="popup__item-error description-input-error"></span>
+            <span class="popup__item-error aboutuser-error"></span>
             <button type="button" id="close"
               class="popup__button popup__button-close popup__button_act_close animation-button"></button>
             <button type="submit" id="save"
@@ -74,12 +74,12 @@
         <h2 class="popup__title">Новое Место</h2>
         <fieldset class="popup__items">
           <div class="popup__item">
-            <input type="text" value="" class="popup__input popup__input_title_value" name="title-input"
-              id="title-input" placeholder="Название" minlength="2" maxlength="30" required>
-            <span class="popup__item-error title-input-error"></span>
-            <input type="url" value="" class="popup__input popup__input_link_value" name="link-input" id="link-input"
+            <input type="text" value="" class="popup__input popup__input_title_value" name="titlecard"
+              id="titlecard" placeholder="Название" minlength="2" maxlength="30" required>
+            <span class="popup__item-error titlecard-error"></span>
+            <input type="url" value="" class="popup__input popup__input_link_value" name="linkcard" id="linkcard"
               placeholder="Ссылка на картинку" required>
-            <span class="popup__item-error link-input-error"></span>
+            <span class="popup__item-error linkcard-error"></span>
             <button type="button" id="closecard"
               class="popup__button popup__button-close popup__button_card_close animation-button"></button>
             <button type="submit" id="create"
