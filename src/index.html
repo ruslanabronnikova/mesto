@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Площадка Место</title>
+</head>
+
+<body class="page">
+  <header class="header">
+    <img src="<%=require('./images/logo/logo.svg')%>" class="header__logo" alt="Логотип Место">
+  </header>
+
+  <main class="main">
+    <section class="profile">
+      <img src="<%=require('./images/profile/Avatar.png')%>" class="profile__avatar" alt="Изображение">
+      <div class="profile__info">
+        <h1 class="profile__title">Жак-Ив Кусто</h1>
+        <p class="profile__subtitle">Исследователь океана</p>
+        <button aria-label="Редактировать" id="Open" class="profile__button profile__button_act_edit animation-button"
+          type="button"></button>
+      </div>
+      <button aria-label="Добавить" class="profile__button profile__button_act_add animation-button"
+        type="button"></button>
+    </section>
+
+    <section class="elements">
+    </section>
+  </main>
+
+  <template id="template-element">
+    <div class="element">
+      <img class="element__image" alt="#" src="#">
+      <h2 class="element__title"></h2>
+      <button aria-label="Нравится" class="element__buttonlike" type="button"></button>
+      <button aria-label="Нравится" class="element__buttondel" type="button"></button>
+    </div>
+  </template>
+
+  <footer class="footer">
+    <p class="footer__copyright">&copy; 2020 Mesto Russia</p>
+  </footer>
+
+  <div class="popup popup_mesto_profile">
+    <div class="popup__body">
+      <form class="popup__container popup__container_mesto_profile" name="profile" id="profileform" method="post"
+        novalidate>
+        <h2 class="popup__title">Редактировать профиль</h2>
+        <fieldset class="popup__items">
+          <div class="popup__item">
+            <input type="text" value="" class="popup__input popup__input_name_value" name="nameuser" id="nameuser"
+              placeholder="Имя" minlength="2" maxlength="40"
+              title="Длина поля должна быть 2 и более символов и менее или равно 40" required>
+            <span class="popup__item-error nameuser-error"></span>
+            <input type="text" value="" class="popup__input popup__input_career_value" name="aboutuser"
+              id="aboutuser" placeholder="Описание" minlength="2" maxlength="200"
+              title="Длина поля должна быть 2 и более символов и менее или равно 200" required>
+            <span class="popup__item-error aboutuser-error"></span>
+            <button type="button" id="close"
+              class="popup__button popup__button-close popup__button_act_close animation-button"></button>
+            <button type="submit" id="save"
+              class="popup__button popup__button-submit popup__button_act_save">Сохранить</button>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+  </div>
+
+  <div class="popup popup_mesto_card">
+    <div class="popup__body">
+      <form class="popup__container popup__container_mesto_card" name="mesto" id="mestoform" method="post" novalidate>
+        <h2 class="popup__title">Новое Место</h2>
+        <fieldset class="popup__items">
+          <div class="popup__item">
+            <input type="text" value="" class="popup__input popup__input_title_value" name="titlecard"
+              id="titlecard" placeholder="Название" minlength="2" maxlength="30" required>
+            <span class="popup__item-error titlecard-error"></span>
+            <input type="url" value="" class="popup__input popup__input_link_value" name="linkcard" id="linkcard"
+              placeholder="Ссылка на картинку" required>
+            <span class="popup__item-error linkcard-error"></span>
+            <button type="button" id="closecard"
+              class="popup__button popup__button-close popup__button_card_close animation-button"></button>
+            <button type="submit" id="create"
+              class="popup__button popup__button-submit popup__button_card_save">Создать</button>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+  </div>
+
+  <div class="popup popup_mesto_image">
+    <div class="popup__imagebody">
+      <img class="popup__picture" alt="#" src="#">
+      <h2 class="popup__picture-title"></h2>
+      <button type="button" id="closeimage"
+        class="popup__button popup__button-close popup__button_img_close animation-button"></button>
+    </div>
+  </div>
+</body>
+
+</html>
