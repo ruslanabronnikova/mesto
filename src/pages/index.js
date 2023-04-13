@@ -1,4 +1,4 @@
-import './pages/index.css';
+import './index.css';
 //Импорты констант проекта
 import {
   popupFormProfile,
@@ -10,16 +10,16 @@ import {
   initialCards,
   popupOpenCardButton,
   popupFormCard
-} from './utils/constants.js'
+} from '../utils/constants.js'
 
 //Импорты классов проекта
-import Card from './components/Сard.js';
-import FormValidator from './components/FormValidator.js';
-import Section from './components/Section.js'
+import Card from '../components/Сard.js';
+import FormValidator from '../components/FormValidator.js';
+import Section from '../components/Section.js'
 
-import PopupWithForm from './components/PopupWithForm.js';
-import PopupWithImage from './components/PopupWithImage.js';
-import UserInfo from './components/UserInfo.js';
+import PopupWithForm from '../components/PopupWithForm.js';
+import PopupWithImage from '../components/PopupWithImage.js';
+import UserInfo from '../components/UserInfo.js';
 
 const userInfo = new UserInfo ({
   nameusSelector: '.profile__title',
@@ -33,7 +33,7 @@ const handleFormSubmitProfile = (data) => {
 }
 
 const handleFormSubmitCreateCard = (data) => {
-  cardList.setPreItem(createCard({
+  cardList.prependItem(createCard({
     name: data.titlecard,
     link: data.linkcard
   }))
@@ -65,18 +65,15 @@ const popupOpenImageCard = new PopupWithImage (
 
 popupOpenImageCard.setEventListeners();
 
-function openPopupUserProfile({name, about}) {
-  inputName.value = name;
-  inputDescription.value = about;
-}
 
 popupButtonOpenProfile.addEventListener('click', () => {
   const usInfo = userInfo.getUserInfo();
 
-  openPopupUserProfile({
-    name: usInfo.nameUser,
-    about: usInfo.aboutUser
-  })
+  popupUserProfile.setInputValues({
+    nameuser: usInfo.nameUser,
+    aboutuser: usInfo.aboutUser
+  });
+
   popupUserProfile.open();
 });
 
@@ -95,7 +92,7 @@ const cardList = new Section(
   {
     items: initialCards,
     renderer: (item) => {
-      cardList.setApItem(createCard(item));
+      cardList.appendItem(createCard(item));
     },
   },
   element

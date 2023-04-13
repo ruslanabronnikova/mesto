@@ -3,7 +3,7 @@ export default class FormValidator {
     this._config = config;
     this._formElement = formElement;
     this._inputList = Array.from(this._formElement.querySelectorAll(this._config.inputElement));
-    this._submitButtonSelector = this._formElement.querySelector(this._config.submitButtonSelector);
+    this._submitButton = this._formElement.querySelector(this._config.submitButton);
     this._inactiveButtonClass = this._config.inactiveButtonClass;
   }
 
@@ -42,11 +42,11 @@ export default class FormValidator {
   // Включение и выключение активации кнопки
   toggleButtonState() {
     if (!this._hasInputValid()) {
-      this._submitButtonSelector.classList.remove(this._inactiveButtonClass)
-      this._submitButtonSelector.removeAttribute('disabled');
+      this._submitButton.classList.remove(this._inactiveButtonClass)
+      this._submitButton.removeAttribute('disabled');
     } else {
-      this._submitButtonSelector.classList.add(this._inactiveButtonClass)
-      this._submitButtonSelector.setAttribute('disabled', 'disabled');
+      this._submitButton.classList.add(this._inactiveButtonClass)
+      this._submitButton.setAttribute('disabled', 'disabled');
     }
   }
 
@@ -65,7 +65,7 @@ export default class FormValidator {
     })
   }
 
-  // метод очищения формы 
+  // метод очищения формы
   resetValidation() {
     this.toggleButtonState();
 

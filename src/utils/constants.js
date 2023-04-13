@@ -10,7 +10,7 @@ export const element = document.querySelector('.elements');
 export const config = {
   formElement: '.popup__container',
   inputElement: '.popup__input',
-  submitButtonSelector: '.popup__button-submit',
+  submitButton: '.popup__button-submit',
   inactiveButtonClass: 'popup__button-submit_disabled',
   inputErrorClass: 'popup__item_type_error',
   errorClass: '.popup__item-error'
