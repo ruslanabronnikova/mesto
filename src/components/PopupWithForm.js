@@ -10,6 +10,10 @@ export default class PopupWithForm extends Popup {
     this._inputList = this._popupForm.querySelectorAll('.popup__input');
   }
 
+  setButtonText(text) {
+    this._popupButtonSubmit.textContent = text;
+  }
+
   _getInputValues() {
     const data = {};
     this._inputList.forEach((input) => {
