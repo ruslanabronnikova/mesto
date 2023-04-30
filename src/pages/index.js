@@ -54,7 +54,6 @@ const handleFormSubmitProfile = (data) => {
   return api.editProfileUsers(data)
   .then((data) => {
     userInfo.setUserInfo(data.name, data.about);
-    popupUserProfile.close()
   })
   .catch((err) => {
     console.log(`Ошибка: ${err}`);
@@ -66,7 +65,6 @@ const handleFormSubmitCreateCard = (data) => {
   return api.addNewCards(data)
   .then((data) => {
     cardList.prependItem(createCard(data, userId));
-    popupCreateCards.close()
   })
   .catch((err) => {
     console.log(`Ошибка: ${err}`);
@@ -83,16 +81,13 @@ const handleCardClick = ({name, link}) => {
 
 // сабмит формы изменения Аватара пользователя
 const handleFormNewAvatar = (data) => {
-  popupNewAvatar.setButtonText('Сoхранение...')
-  api.editAvatarProfile(data)
+  return api.editAvatarProfile(data)
   .then(() => {
     userInfo.setUserAvatar(data.avatar)
-    popupNewAvatar.close()
   })
   .catch((err) => {
     console.log(`Ошибка: ${err}`);
   })
-  .finally((popupNewAvatar.setButtonText('Сохранить')))
 }
 
 const popupUserProfile = new PopupWithForm (
