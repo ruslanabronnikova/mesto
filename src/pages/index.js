@@ -51,8 +51,7 @@ const userInfo = new UserInfo ({
 
 // сабмит формы редактирования профиля
 const handleFormSubmitProfile = (data) => {
-  popupUserProfile.setButtonText('Сoхранение...')
-  api.editProfileUsers(data)
+  return api.editProfileUsers(data)
   .then((data) => {
     userInfo.setUserInfo(data.name, data.about);
     popupUserProfile.close()
@@ -60,13 +59,11 @@ const handleFormSubmitProfile = (data) => {
   .catch((err) => {
     console.log(`Ошибка: ${err}`);
   })
-  .finally((popupUserProfile.setButtonText('Сохранить')))
 }
 
 // сабмит формы добавления новой карточки
 const handleFormSubmitCreateCard = (data) => {
-  popupCreateCards.setButtonText('Сoхранение...')
-  api.addNewCards(data)
+  return api.addNewCards(data)
   .then((data) => {
     cardList.prependItem(createCard(data, userId));
     popupCreateCards.close()
@@ -74,7 +71,6 @@ const handleFormSubmitCreateCard = (data) => {
   .catch((err) => {
     console.log(`Ошибка: ${err}`);
   })
-  .finally((popupCreateCards.setButtonText('Сохранить')))
 }
 
 // сабмит формы открытия попапа с изображением карточки
