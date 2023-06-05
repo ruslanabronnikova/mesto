@@ -31,7 +31,7 @@ export default class FormValidator {
       this._hideInputError(inputElement);
     }
   }
-
+ 
   //Проверка валидации инпута
   _hasInputValid() {
     return this._inputList.some((inputElement) => {
